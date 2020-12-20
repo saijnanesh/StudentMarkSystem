@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -17,7 +18,6 @@ import javax.persistence.Table;
 public class Teacher {
 	
 	@Id
-	@Column(name = "EmployeeId"  )
 	private int employeeId;
 	private String name;
 	private long mobileNumber;
@@ -25,14 +25,13 @@ public class Teacher {
 	
 	
 	
-	
-	
-	
-	@OneToMany(targetEntity =Student.class, cascade = CascadeType.ALL)
-	@JoinColumn(name="listOfStudents", referencedColumnName="EmployeeId")
-	private List<Student> listOfStudents = new ArrayList<>();
-	
-	
+//	
+//	
+//@OneToMany(targetEntity = Student.class , cascade = CascadeType.ALL)
+//@JoinColumn(name="listOfStudents", referencedColumnName="employeeId")
+//private List<Student> listOfStudents = new ArrayList<>();
+//
+//	
 	
 	
 	public int getEmployeeId() {
@@ -56,13 +55,13 @@ public class Teacher {
 	
 	
 	
-	public List<Student> getListOfStudents() {
-		return listOfStudents;
-	}
-	public void setListOfStudents(List<Student> listOfStudents) {
-		this.listOfStudents = listOfStudents;
-	}
-	
+//	public List<Student> getListOfStudents() {
+//		return listOfStudents;
+//	}
+//	public void setListOfStudents(List<Student> listOfStudents) {
+//		this.listOfStudents = listOfStudents;
+//	}
+//	
 	
 	public long getMobileNumber() {
 		return mobileNumber;
@@ -78,17 +77,29 @@ public class Teacher {
 	
 	
 	
-	public Teacher(int employeeId, String name, long mobileNumber, String subject, List<Student> listOfStudents) {
+//	public Section getSection() {
+//		return section;
+//	}
+//	public void setSection(Section section) {
+//		this.section = section;
+//	}
+//	
+	
+	
+	
+	
+	
+	public Teacher(int employeeId, String name, long mobileNumber, String subject
+			//, Section section,	List<Student> listOfStudents
+			) {
 		super();
 		this.employeeId = employeeId;
 		this.name = name;
 		this.mobileNumber = mobileNumber;
 		this.subject = subject;
-		this.listOfStudents = listOfStudents;
+		//this.section = section;
+//		this.listOfStudents = listOfStudents;
 	}
-	
-	
-	
 	public Teacher() {
 		super();
 	}

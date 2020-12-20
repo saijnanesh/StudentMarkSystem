@@ -12,9 +12,7 @@ import javax.persistence.Table;
 public class Marks {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "marks_seq")
-	@SequenceGenerator(sequenceName = "marks_seq", allocationSize = 1, name = "marks_seq")
-	private int marksId;
+	private String marksId;
 	private int sanskritMarks;
 	private int englishMarks;
 	private int mathsMarks;
@@ -25,14 +23,14 @@ public class Marks {
 	
 	
 	
-	
+	 
 	
 	
 
-	public int getMarksId() {
+	public String getMarksId() {
 		return marksId;
 	}
-	public void setMarksId(int marksId) {
+	public void setMarksId(String marksId) {
 		this.marksId = marksId;
 	}
 	public int getSanskritMarks() {
@@ -64,6 +62,26 @@ public class Marks {
 	}
 	public void setChemistryMarks(int chemistryMarks) {
 		this.chemistryMarks = chemistryMarks;
+	}
+	public Marks(String marksId, int sanskritMarks, int englishMarks, int mathsMarks, int physicsMarks,
+			int chemistryMarks) {
+		super();
+		this.marksId = marksId;
+		this.sanskritMarks = sanskritMarks;
+		this.englishMarks = englishMarks;
+		this.mathsMarks = mathsMarks;
+		this.physicsMarks = physicsMarks;
+		this.chemistryMarks = chemistryMarks;
+	}
+	public Marks() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Marks [marksId=" + marksId + ", sanskritMarks=" + sanskritMarks + ", englishMarks=" + englishMarks
+				+ ", mathsMarks=" + mathsMarks + ", physicsMarks=" + physicsMarks + ", chemistryMarks=" + chemistryMarks
+				+ "]";
 	}
 	
 	
